@@ -1,0 +1,6 @@
+{
+  "name": "Ideal Look Salon",
+  "description": "Premium Ladies Beauty Salon & Bridal Studio in Latifabad, Hyderabad, Pakistan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
