@@ -1,13 +1,1165 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ideal Look Salon - Premium Ladies Beauty Salon & Bridal Studio</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                bg: {
+                  primary: '#FFF8FB',
+                  secondary: '#FDEEF4',
+                },
+                accent: {
+                  pink: '#E46A92',
+                },
+                rose: {
+                  gold: '#D4A373',
+                },
+                text: '#2C2C2C',
+                muted: '#6F6F6F',
+                card: '#FFFFFF',
+                border: '#F4D9E5',
+              }
+            },
+            fontFamily: {
+              serif: ['"Playfair Display"', 'Georgia', 'serif'],
+              sans: ['"Plus Jakarta Sans"', '"Inter"', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body class="bg-brand-bg-primary text-brand-text font-sans antialiased selection:bg-brand-accent-pink selection:text-white">
+    
+    <!-- GLOBAL DECORATIVE BACKGROUND GLOWS -->
+    <div class="fixed top-0 left-1/4 w-[600px] h-[600px] bg-brand-bg-secondary rounded-full filter blur-[150px] opacity-40 pointer-events-none -z-10"></div>
+    <div class="fixed top-[50vh] right-0 w-[500px] h-[500px] bg-brand-bg-secondary rounded-full filter blur-[130px] opacity-30 pointer-events-none -z-10"></div>
+    <div class="fixed top-[150vh] left-10 w-[600px] h-[600px] bg-[#fff0f5] rounded-full filter blur-[160px] opacity-45 pointer-events-none -z-10"></div>
+
+    <!-- FLOATING FLOATER WHATSAPP CTA -->
+    <a href="https://wa.me/923146867612?text=Hello%20Ideal%20Look%20Salon%2C%20I%20would%20like%20to%20book%20an%20appointment." 
+       target="_blank" 
+       rel="referrer noopener"
+       class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-300 group"
+       id="floating-whatsapp">
+      <i data-lucide="message-circle" class="w-6 h-6"></i>
+      <span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-300 font-semibold text-sm whitespace-nowrap">
+        Chat on WhatsApp
+      </span>
+    </a>
+
+    <!-- HEADER & FLOATING NAVIGATION -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-brand-bg-primary/85 border-b border-brand-border/60 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          
+          <!-- Logo Monogram & Name -->
+          <a href="#hero" class="flex items-center space-x-3 cursor-pointer">
+            <div class="w-11 h-11 rounded-full border border-brand-rose-gold bg-brand-bg-secondary flex items-center justify-center shadow-sm">
+              <span class="font-serif text-lg font-semibold text-brand-rose-gold tracking-widest">IL</span>
+            </div>
+            <div>
+              <span class="font-serif text-xl sm:text-2xl font-semibold tracking-wide text-brand-text block leading-none mb-1">
+                Ideal Look
+              </span>
+              <span class="text-[9px] tracking-[0.2em] uppercase text-brand-accent-pink block font-bold">
+                Salon & Bridal Studio
+              </span>
+            </div>
+          </a>
+
+          <!-- Desktop Navigation Links -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#about" class="text-xs font-semibold uppercase tracking-wider text-brand-text hover:text-brand-accent-pink transition-colors">About Us</a>
+            <a href="#services" class="text-xs font-semibold uppercase tracking-wider text-brand-text hover:text-brand-accent-pink transition-colors">Services</a>
+            <a href="#bridal" class="text-xs font-semibold uppercase tracking-wider text-brand-text hover:text-brand-accent-pink transition-colors">Bridal Studio</a>
+            <a href="#why-us" class="text-xs font-semibold uppercase tracking-wider text-brand-text hover:text-brand-accent-pink transition-colors">Why Choose Us</a>
+            <a href="#testimonials" class="text-xs font-semibold uppercase tracking-wider text-brand-text hover:text-brand-accent-pink transition-colors">Reviews</a>
+            <a href="#contact" class="text-xs font-semibold uppercase tracking-wider text-brand-text hover:text-brand-accent-pink transition-colors">Contact</a>
+          </div>
+
+          <!-- Header Booking Button -->
+          <div class="hidden md:flex items-center space-x-4">
+            <a 
+              href="https://wa.me/923146867612?text=Hello%20Ideal%20Look%20Salon%2C%20I%20would%20like%20to%20book%20an%20appointment."
+              target="_blank"
+              rel="referrer noopener"
+              class="inline-flex items-center space-x-2 bg-brand-accent-pink text-white text-[11px] uppercase tracking-wider font-bold py-3.5 px-6 rounded-full shadow-md hover:bg-[#d6557e] transition-all duration-300"
+            >
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Quick WhatsApp</span>
+            </a>
+            <a 
+              href="#booking-builder"
+              class="border border-brand-rose-gold text-brand-rose-gold text-[11px] uppercase tracking-wider font-bold py-3.5 px-6 rounded-full hover:bg-brand-rose-gold hover:text-white transition-all duration-300"
+            >
+              Book Custom Look
+            </a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-btn"
+              class="text-brand-text p-2 rounded-md hover:text-brand-accent-pink focus:outline-none"
+              aria-label="Toggle navigation menu"
+            >
+              <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div
+        id="mobile-menu-drawer"
+        class="hidden md:hidden bg-brand-bg-primary border-b border-brand-border transition-all duration-300"
+      >
+        <div class="px-4 pt-2 pb-6 space-y-3">
+          <a href="#about" class="mobile-nav-link block w-full text-left py-2 px-3 text-sm font-semibold uppercase tracking-wider text-brand-text hover:bg-brand-bg-secondary rounded-lg">About Us</a>
+          <a href="#services" class="mobile-nav-link block w-full text-left py-2 px-3 text-sm font-semibold uppercase tracking-wider text-brand-text hover:bg-brand-bg-secondary rounded-lg">Services & Prices</a>
+          <a href="#bridal" class="mobile-nav-link block w-full text-left py-2 px-3 text-sm font-semibold uppercase tracking-wider text-brand-text hover:bg-brand-bg-secondary rounded-lg">Bridal Special</a>
+          <a href="#why-us" class="mobile-nav-link block w-full text-left py-2 px-3 text-sm font-semibold uppercase tracking-wider text-brand-text hover:bg-brand-bg-secondary rounded-lg">Why Choose Us</a>
+          <a href="#testimonials" class="mobile-nav-link block w-full text-left py-2 px-3 text-sm font-semibold uppercase tracking-wider text-brand-text hover:bg-brand-bg-secondary rounded-lg">Client Reviews</a>
+          <a href="#contact" class="mobile-nav-link block w-full text-left py-2 px-3 text-sm font-semibold uppercase tracking-wider text-brand-text hover:bg-brand-bg-secondary rounded-lg">Contact & Location</a>
+          
+          <div class="pt-4 flex flex-col space-y-2">
+            <a 
+              href="https://wa.me/923146867612?text=Hello%20Ideal%20Look%20Salon%2C%20I%20would%20like%20to%20book%20an%20appointment."
+              target="_blank"
+              rel="referrer noopener"
+              class="w-full inline-flex items-center justify-center space-x-2 bg-brand-accent-pink text-white py-3.5 rounded-full font-bold text-xs uppercase tracking-wider shadow-md"
+            >
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>WhatsApp Booking</span>
+            </a>
+            <a 
+              href="#booking-builder"
+              class="mobile-nav-link w-full text-center border border-brand-rose-gold text-brand-rose-gold py-3.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-brand-rose-gold hover:text-white transition"
+            >
+              Custom Booking Builder
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="relative pt-8 pb-20 md:py-32 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Hero Text Side -->
+          <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+            
+            <!-- Premium Top Badge -->
+            <div class="inline-flex items-center space-x-2 bg-brand-bg-secondary border border-brand-border py-1.5 px-4 rounded-full">
+              <i data-lucide="sparkles" class="w-4 h-4 text-brand-accent-pink animate-pulse"></i>
+              <span class="text-[10px] uppercase tracking-widest font-bold text-brand-accent-pink">
+                Premium Ladies Salon & Bridal Studio
+              </span>
+            </div>
+
+            <!-- Master Display Typography -->
+            <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-brand-text leading-[1.15]">
+              Unveil Your <br />
+              <span class="font-semibold italic text-brand-rose-gold">Signature Glow</span> <br />
+              with Absolute Luxury
+            </h1>
+
+            <!-- Sophisticated Slogan -->
+            <p class="text-brand-muted text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+              Hyderabad's trusted sanctuary for magnificent bridal makeup, expert hair transformations, and premium skincare therapies. Experience bespoke beauty tailored exclusively for you.
+            </p>
+
+            <!-- Action Trigger Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+              <a
+                href="#booking-builder"
+                class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-brand-accent-pink text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-[#d6557e] hover:-translate-y-0.5 transition-all duration-300 text-xs uppercase tracking-wider"
+              >
+                <span>Build Custom Package & Book</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+              <a
+                href="#services"
+                class="w-full sm:w-auto inline-flex items-center justify-center border border-brand-border bg-white text-brand-text font-bold py-4 px-8 rounded-full hover:bg-brand-bg-secondary hover:border-brand-accent-pink/30 transition-all duration-300 text-xs uppercase tracking-wider"
+              >
+                View Premium Services
+              </a>
+            </div>
+
+            <!-- Trust Google Review Indicator -->
+            <div class="flex items-center justify-center lg:justify-start space-x-3 pt-6 border-t border-brand-border/40 max-w-md mx-auto lg:mx-0">
+              <div class="flex text-amber-400">
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+              </div>
+              <div class="text-xs text-brand-muted font-medium">
+                <span class="text-brand-text font-semibold text-sm block sm:inline">4.1 Stars on Google Reviews</span>
+                <span class="sm:ml-2">(20+ Verified Client Reviews)</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Hero Visual Block (Luxury Abstract Geometry Frame) -->
+          <div class="lg:col-span-5 relative flex items-center justify-center">
+            
+            <!-- Outer soft shadow background layer -->
+            <div class="absolute w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] bg-white rounded-3xl -rotate-6 shadow-xl border border-brand-border/40"></div>
+            
+            <!-- Main Luxury Border Frame Box -->
+            <div class="relative w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] bg-brand-bg-secondary rounded-3xl rotate-3 border-2 border-brand-rose-gold/40 shadow-xl flex flex-col justify-between p-8 overflow-hidden">
+              
+              <!-- Abstract Geometric Waves and Mandalas using SVG in place of images -->
+              <div class="absolute inset-0 pointer-events-none opacity-20 flex items-center justify-center">
+                <svg class="w-full h-full text-brand-rose-gold" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                  <circle cx="50" cy="50" r="40" stroke-width="0.5" stroke-dasharray="2 2" />
+                  <circle cx="50" cy="50" r="30" stroke-width="0.7" />
+                  <circle cx="50" cy="50" r="20" stroke-width="0.5" stroke-dasharray="3 1" />
+                  <path d="M50 0 V100 M0 50 H100 M15 15 L85 85 M15 85 L85 15" stroke-width="0.2" />
+                </svg>
+              </div>
+
+              <!-- Sparkling Icons -->
+              <div class="flex justify-between items-start z-10">
+                <i data-lucide="crown" class="w-10 h-10 text-brand-rose-gold"></i>
+                <div class="w-3 h-3 rounded-full bg-brand-accent-pink animate-ping"></div>
+              </div>
+
+              <!-- Inner visual typographic design representing luxury salon atmosphere -->
+              <div class="my-auto text-center z-10 space-y-4">
+                <span class="font-mono text-xs tracking-[0.3em] uppercase text-brand-accent-pink block font-bold">
+                  Est. 2018
+                </span>
+                <h3 class="font-serif text-3xl sm:text-4xl font-semibold text-brand-text tracking-wide">
+                  Ideal Look
+                </h3>
+                <div class="h-[1px] w-24 bg-brand-rose-gold mx-auto"></div>
+                <p class="font-serif text-xs italic text-brand-rose-gold tracking-widest uppercase">
+                  Ladies Beauty Studio
+                </p>
+              </div>
+
+              <!-- Key Benefits Floating Badges at the bottom inside the frame -->
+              <div class="flex justify-between items-end z-10 text-[10px] uppercase tracking-widest font-bold text-brand-muted">
+                <span>Latifabad Unit 7</span>
+                <span>Premium Care</span>
+              </div>
+
+            </div>
+
+            <!-- Floating Decorative Badges outside the frame -->
+            <div class="absolute -top-6 -right-4 bg-white border border-brand-border py-2 px-4 rounded-2xl shadow-md z-20 flex items-center space-x-2">
+              <i data-lucide="award" class="w-5 h-5 text-brand-rose-gold"></i>
+              <div>
+                <span class="text-xs font-bold block text-brand-text">Bridal Studio</span>
+                <span class="text-[10px] text-brand-muted block font-medium">Elite Artistry</span>
+              </div>
+            </div>
+
+            <div class="absolute -bottom-6 -left-4 bg-white border border-brand-border py-2.5 px-4 rounded-2xl shadow-md z-20 flex items-center space-x-2">
+              <i data-lucide="shield-check" class="w-5 h-5 text-emerald-500"></i>
+              <div>
+                <span class="text-xs font-bold block text-brand-text">100% Hygienic</span>
+                <span class="text-[10px] text-brand-muted block font-medium">Sanitized Kits</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HERO STATISTICS BANNER -->
+    <section class="bg-brand-bg-secondary/60 border-y border-brand-border py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          
+          <div class="space-y-1">
+            <span class="block font-serif text-3xl sm:text-4xl font-bold text-brand-accent-pink">20+</span>
+            <span class="block text-xs uppercase tracking-wider font-semibold text-brand-text">Verified Reviews</span>
+            <span class="block text-[11px] text-brand-muted">4.1★ on Google Maps</span>
+          </div>
+
+          <div class="space-y-1 border-l border-brand-border/80">
+            <span class="block font-serif text-3xl sm:text-4xl font-bold text-brand-rose-gold">Elite</span>
+            <span class="block text-xs uppercase tracking-wider font-semibold text-brand-text">Bridal Studio</span>
+            <span class="block text-[11px] text-brand-muted">Premium HD Draping</span>
+          </div>
+
+          <div class="space-y-1 border-l border-brand-border/80">
+            <span class="block font-serif text-3xl sm:text-4xl font-bold text-brand-accent-pink">Luxury</span>
+            <span class="block text-xs uppercase tracking-wider font-semibold text-brand-text">Treatments</span>
+            <span class="block text-[11px] text-brand-muted">Imported Safe Brands</span>
+          </div>
+
+          <div class="space-y-1 border-l border-brand-border/80">
+            <span class="block font-serif text-3xl sm:text-4xl font-bold text-brand-rose-gold">Trusted</span>
+            <span class="block text-xs uppercase tracking-wider font-semibold text-brand-text">Beauty Experts</span>
+            <span class="block text-[11px] text-brand-muted">Highly Trained Staff</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT US SECTION -->
+    <section id="about" class="py-20 md:py-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          
+          <!-- Left Graphic Grid of Typographic Feature Boards -->
+          <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+            
+            <div class="bg-white p-6 rounded-2xl border border-brand-border shadow-sm space-y-4">
+              <div class="w-10 h-10 rounded-full bg-brand-bg-secondary flex items-center justify-center">
+                <i data-lucide="crown" class="w-5 h-5 text-brand-rose-gold"></i>
+              </div>
+              <h4 class="font-serif text-lg font-semibold text-brand-text">Bespoke Bridal</h4>
+              <p class="text-xs text-brand-muted leading-relaxed font-light">
+                Tailored styling, jewelry setups, and custom makeup trials designed for your dream wedding glow.
+              </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border border-brand-border shadow-sm space-y-4 translate-y-6">
+              <div class="w-10 h-10 rounded-full bg-brand-bg-secondary flex items-center justify-center">
+                <i data-lucide="scissors" class="w-5 h-5 text-brand-accent-pink"></i>
+              </div>
+              <h4 class="font-serif text-lg font-semibold text-brand-text">Hair Couture</h4>
+              <p class="text-xs text-brand-muted leading-relaxed font-light">
+                From nourishing Keratin smoothing to elegant modern updos, we rejuvenate your hair.
+              </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border border-brand-border shadow-sm space-y-4">
+              <div class="w-10 h-10 rounded-full bg-brand-bg-secondary flex items-center justify-center">
+                <i data-lucide="sparkles" class="w-5 h-5 text-brand-rose-gold"></i>
+              </div>
+              <h4 class="font-serif text-lg font-semibold text-brand-text">Derm Skincare</h4>
+              <p class="text-xs text-brand-muted leading-relaxed font-light">
+                Hydra-facials and botanical treatments using premium products to treat and refresh.
+              </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border border-brand-border shadow-sm space-y-4 translate-y-6">
+              <div class="w-10 h-10 rounded-full bg-brand-bg-secondary flex items-center justify-center">
+                <i data-lucide="shield-check" class="w-5 h-5 text-brand-accent-pink"></i>
+              </div>
+              <h4 class="font-serif text-lg font-semibold text-brand-text">Hygienic Care</h4>
+              <p class="text-xs text-brand-muted leading-relaxed font-light">
+                Strict standards, fresh single-use supplies, and sanitization for your peace of mind.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Right Text Content Side -->
+          <div class="lg:col-span-7 space-y-8">
+            
+            <div class="space-y-3">
+              <span class="text-xs uppercase tracking-widest font-bold text-brand-rose-gold block">
+                Welcome to Ideal Look Salon
+              </span>
+              <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-brand-text">
+                Crafting Timeless Beauty in Hyderabad
+              </h2>
+              <div class="h-[2px] w-20 bg-brand-accent-pink"></div>
+            </div>
+
+            <p class="text-brand-muted leading-relaxed text-base font-light">
+              Nestled in the prime area of <strong>Unit 7 House, Latifabad, Hyderabad</strong>, Ideal Look Salon stands as the pinnacle of elegant feminine pampering. We have crafted a beautiful, tranquil sanctuary where luxury meets professional beauty expertise.
+            </p>
+
+            <p class="text-brand-muted leading-relaxed text-base font-light">
+              Our philosophy is simple: we believe every client has a unique signature beauty that deserves to be meticulously highlighted. Whether you are walking down the aisle, attending a luxury soirée, or treating yourself to hair restoration and advanced skincare, our master beauticians ensure a premium and comfortable experience.
+            </p>
+
+            <!-- Three Pillars highlight -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
+              
+              <div class="space-y-1">
+                <div class="flex items-center space-x-2 text-brand-accent-pink font-semibold text-sm">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 flex-shrink-0"></i>
+                  <span>Premium Only</span>
+                </div>
+                <p class="text-[11px] text-brand-muted font-light pl-6">
+                  We strictly use imported, dermatologist-approved cosmetics.
+                </p>
+              </div>
+
+              <div class="space-y-1">
+                <div class="flex items-center space-x-2 text-brand-rose-gold font-semibold text-sm">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 flex-shrink-0"></i>
+                  <span>Elite Team</span>
+                </div>
+                <p class="text-[11px] text-brand-muted font-light pl-6">
+                  Our staff is professionally trained in modern bridal and skin sciences.
+                </p>
+              </div>
+
+              <div class="space-y-1">
+                <div class="flex items-center space-x-2 text-brand-accent-pink font-semibold text-sm">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 flex-shrink-0"></i>
+                  <span>Absolute Privacy</span>
+                </div>
+                <p class="text-[11px] text-brand-muted font-light pl-6">
+                  Fully private ladies-only sections to ensure comfort.
+                </p>
+              </div>
+
+            </div>
+
+            <!-- Action -->
+            <div class="pt-4">
+              <a
+                href="#services"
+                class="inline-flex items-center space-x-2 text-brand-accent-pink font-semibold text-sm group"
+              >
+                <span>Explore our treatment catalog</span>
+                <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PREMIUM SERVICES SECTION -->
+    <section id="services" class="py-20 md:py-32 bg-brand-bg-secondary/40 border-y border-brand-border/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Heading -->
+        <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+          <span class="text-xs uppercase tracking-widest font-bold text-brand-rose-gold block">
+            Our Curated Menu
+          </span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-brand-text">
+            Premium Beauty & Hair Treatments
+          </h2>
+          <p class="text-brand-muted text-sm font-light">
+            Explore our comprehensive range of luxury services. Click "Add to Booking" to craft a personalized package and generate a direct WhatsApp request!
+          </p>
+          <div class="h-[2px] w-20 bg-brand-accent-pink mx-auto"></div>
+        </div>
+
+        <!-- Filtering Tabs -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+          <button onclick="filterCategory('All')" id="btn-cat-All" class="cat-btn px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 bg-brand-accent-pink text-white shadow-md">All Treatments</button>
+          <button onclick="filterCategory('Bridal')" id="btn-cat-Bridal" class="cat-btn px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 bg-white border border-brand-border text-brand-text hover:bg-brand-bg-secondary">Bridal</button>
+          <button onclick="filterCategory('Makeup')" id="btn-cat-Makeup" class="cat-btn px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 bg-white border border-brand-border text-brand-text hover:bg-brand-bg-secondary">Makeup</button>
+          <button onclick="filterCategory('Hair')" id="btn-cat-Hair" class="cat-btn px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 bg-white border border-brand-border text-brand-text hover:bg-brand-bg-secondary">Hair</button>
+          <button onclick="filterCategory('Skincare')" id="btn-cat-Skincare" class="cat-btn px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 bg-white border border-brand-border text-brand-text hover:bg-brand-bg-secondary">Skincare</button>
+          <button onclick="filterCategory('BodyCare')" id="btn-cat-BodyCare" class="cat-btn px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 bg-white border border-brand-border text-brand-text hover:bg-brand-bg-secondary">Body Care</button>
+        </div>
+
+        <!-- Service Cards Grid -->
+        <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Dynamically Generated by JavaScript -->
+        </div>
+
+        <!-- Quick Consultation Callout -->
+        <div class="mt-16 bg-white border border-brand-border rounded-2xl p-8 text-center max-w-3xl mx-auto space-y-4">
+          <h3 class="font-serif text-xl font-semibold text-brand-text">Need a bespoke treatment plan?</h3>
+          <p class="text-xs text-brand-muted max-w-xl mx-auto leading-relaxed">
+            Our experts can customize facials, hair treatments, and makeup combinations specifically for your skin, hair type, and occasions. Talk directly to our salon manager.
+          </p>
+          <div class="pt-2">
+            <a
+              href="https://wa.me/923146867612?text=Hello%20Ideal%20Look%20Salon%2C%20I%20would%20like%20to%20get%20a%20free%20consultation%20for%20my%20hair/skin."
+              target="_blank"
+              rel="referrer noopener"
+              class="inline-flex items-center space-x-2 bg-[#25D366] text-white text-xs uppercase tracking-wider font-bold py-3.5 px-6 rounded-full hover:shadow-md transition cursor-pointer"
+            >
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. BRIDAL EXPERIENCE SECTION -->
+    <section id="bridal" class="py-20 md:py-32 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-br from-white via-brand-bg-secondary/40 to-brand-bg-secondary border border-brand-border rounded-3xl p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-sm">
+          
+          <!-- Elegant Background Monogram Vector Pattern -->
+          <div class="absolute right-0 bottom-0 w-80 h-80 opacity-10 pointer-events-none">
+            <svg class="w-full h-full text-brand-rose-gold" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+              <circle cx="50" cy="50" r="45" stroke-width="0.5" />
+              <path d="M10 50 L90 50 M50 10 L50 90" stroke-width="0.5" />
+              <polygon points="50,10 90,50 50,90 10,50" stroke-width="0.5" />
+            </svg>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Side: Editorial Typography Text -->
+            <div class="lg:col-span-7 space-y-6">
+              
+              <div class="inline-flex items-center space-x-2 bg-white border border-brand-border py-1 px-3 rounded-full">
+                <i data-lucide="crown" class="w-3.5 h-3.5 text-brand-rose-gold"></i>
+                <span class="text-[10px] uppercase tracking-widest font-bold text-brand-rose-gold">
+                  Signature Bridal Studio
+                </span>
+              </div>
+
+              <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-brand-text leading-tight">
+                A Haven for the <br />
+                <span className="font-semibold italic text-brand-rose-gold">Modern Bride</span>
+              </h2>
+
+              <p class="text-brand-muted text-sm leading-relaxed font-light">
+                Your wedding day is a celebration of love, history, and new beginnings. At Ideal Look Bridal Studio, we transform your bridal vision into absolute reality. Under the direction of our certified master artist, we craft a luminous, long-lasting look that radiates on camera and captivates in person.
+              </p>
+
+              <!-- Bridal checklist -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div class="flex items-start space-x-3">
+                  <div class="mt-1 w-5 h-5 rounded-full bg-brand-accent-pink/10 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="check" class="w-3 h-3 text-brand-accent-pink"></i>
+                  </div>
+                  <div>
+                    <span class="text-xs font-semibold block text-brand-text">Custom Bridal Mood-Board</span>
+                    <p class="text-[11px] text-brand-muted font-light">Tailored shade matching and skin prep planning during consultation.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start space-x-3">
+                  <div class="mt-1 w-5 h-5 rounded-full bg-brand-accent-pink/10 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="check" class="w-3 h-3 text-brand-accent-pink"></i>
+                  </div>
+                  <div>
+                    <span class="text-xs font-semibold block text-brand-text">HD & Airbrush Foundations</span>
+                    <p class="text-[11px] text-brand-muted font-light">Flawless, lightweight coverage engineered for sweat resistance.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start space-x-3">
+                  <div class="mt-1 w-5 h-5 rounded-full bg-brand-accent-pink/10 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="check" class="w-3 h-3 text-brand-accent-pink"></i>
+                  </div>
+                  <div>
+                    <span class="text-xs font-semibold block text-brand-text">Dupatta & Jewelry Draping</span>
+                    <p class="text-[11px] text-brand-muted font-light">Perfect secure pins and elegant setting of traditional jewelry.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start space-x-3">
+                  <div class="mt-1 w-5 h-5 rounded-full bg-brand-accent-pink/10 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="check" class="w-3 h-3 text-brand-accent-pink"></i>
+                  </div>
+                  <div>
+                    <span class="text-xs font-semibold block text-brand-text">Exclusive Bridal Lounge</span>
+                    <p class="text-[11px] text-brand-muted font-light">A beautiful, calm, private space for the bride and her bridal party.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Action -->
+              <div class="pt-4 flex flex-col sm:flex-row items-center gap-4">
+                <button
+                  onclick="selectBridalAndBuild()"
+                  class="w-full sm:w-auto text-center bg-brand-accent-pink text-white text-xs uppercase tracking-wider font-bold py-3.5 px-8 rounded-full shadow-md hover:bg-[#d6557e] transition"
+                >
+                  Select Signature Bridal Bundle
+                </button>
+                <a
+                  href="https://wa.me/923146867612?text=Hello%20Ideal%20Look%20Salon%2C%20I%20would%20like%20to%20inquire%20about%20your%20bridal%20makeup%20packages%20and%20rates."
+                  target="_blank"
+                  rel="referrer noopener"
+                  class="w-full sm:w-auto text-center border border-brand-rose-gold text-brand-rose-gold text-xs uppercase tracking-wider font-bold py-3.5 px-8 rounded-full hover:bg-brand-rose-gold hover:text-white transition"
+                >
+                  Consult Bridal Coordinator
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Right Side: Elegant Graphic Visual representation of Bridal Packages -->
+            <div class="lg:col-span-5 flex items-center justify-center">
+              <div class="bg-white border border-brand-border rounded-2xl p-6 sm:p-8 w-full max-w-sm shadow-sm space-y-6 relative">
+                
+                <!-- Luxury Star Accents -->
+                <div class="absolute -top-3 -left-3 text-brand-rose-gold animate-bounce">
+                  <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+
+                <div class="text-center space-y-2">
+                  <span class="text-[10px] uppercase tracking-widest font-bold text-brand-accent-pink block">Featured Package</span>
+                  <h3 class="font-serif text-2xl font-semibold text-brand-text">The Royal Bride</h3>
+                  <div class="h-[1px] w-12 bg-brand-rose-gold mx-auto"></div>
+                </div>
+
+                <div class="space-y-3">
+                  <div class="flex items-center space-x-2 text-xs text-brand-muted">
+                    <i data-lucide="check" class="w-4 h-4 text-brand-rose-gold flex-shrink-0"></i>
+                    <span>Pre-Bridal Complete Glow Facial</span>
+                  </div>
+                  <div class="flex items-center space-x-2 text-xs text-brand-muted">
+                    <i data-lucide="check" class="w-4 h-4 text-brand-rose-gold flex-shrink-0"></i>
+                    <span>Ultra-HD Signature Bridal Makeup</span>
+                  </div>
+                  <div class="flex items-center space-x-2 text-xs text-brand-muted">
+                    <i data-lucide="check" class="w-4 h-4 text-brand-rose-gold flex-shrink-0"></i>
+                    <span>Exquisite Bridal Hair Styling</span>
+                  </div>
+                  <div class="flex items-center space-x-2 text-xs text-brand-muted">
+                    <i data-lucide="check" class="w-4 h-4 text-brand-rose-gold flex-shrink-0"></i>
+                    <span>Professional Jewelry & Dupatta Setting</span>
+                  </div>
+                  <div class="flex items-center space-x-2 text-xs text-brand-muted">
+                    <i data-lucide="check" class="w-4 h-4 text-brand-rose-gold flex-shrink-0"></i>
+                    <span>Lash Customization & Gel Mani-Pedi</span>
+                  </div>
+                </div>
+
+                <div class="border-t border-brand-border/60 pt-4 text-center">
+                  <span class="text-brand-muted text-[10px] uppercase tracking-wider block">Comprehensive Luxury Care</span>
+                  <span class="font-serif text-sm font-bold text-brand-rose-gold block mt-1">Exquisite Glow Guaranteed</span>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. WHY CHOOSE US SECTION -->
+    <section id="why-us" class="py-20 md:py-32 bg-brand-bg-secondary/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Heading -->
+        <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+          <span class="text-xs uppercase tracking-widest font-bold text-brand-rose-gold block">
+            The Standard of Perfection
+          </span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-brand-text">
+            Why Discerning Women Choose Us
+          </h2>
+          <p class="text-brand-muted text-sm font-light">
+            We focus on the minute details of hospitality, science-driven skin treatments, and elegant styles to ensure you receive a truly elite salon session.
+          </p>
+          <div class="h-[2px] w-20 bg-brand-accent-pink mx-auto"></div>
+        </div>
+
+        <!-- Bento Grid Design -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <!-- Box 1 -->
+          <div class="bg-white p-8 rounded-2xl border border-brand-border shadow-sm space-y-4 hover:border-brand-accent-pink/30 hover:shadow-md transition duration-300">
+            <div class="w-12 h-12 rounded-full bg-brand-bg-primary border border-brand-border flex items-center justify-center">
+              <i data-lucide="crown" class="w-6 h-6 text-brand-rose-gold"></i>
+            </div>
+            <h3 class="font-serif text-lg font-semibold text-brand-text">Imported Elite Brands</h3>
+            <p class="text-xs text-brand-muted leading-relaxed font-light">
+              We strictly utilize globally recognized, authentic skincare and cosmetic formulas. Absolutely no cheap or chemical-heavy substitutes are tolerated.
+            </p>
+          </div>
+
+          <!-- Box 2 -->
+          <div class="bg-white p-8 rounded-2xl border border-brand-border shadow-sm space-y-4 hover:border-brand-accent-pink/30 hover:shadow-md transition duration-300">
+            <div class="w-12 h-12 rounded-full bg-brand-bg-primary border border-brand-border flex items-center justify-center">
+              <i data-lucide="sparkles" class="w-6 h-6 text-brand-accent-pink"></i>
+            </div>
+            <h3 class="font-serif text-lg font-semibold text-brand-text">Artistry & Technique</h3>
+            <p class="text-xs text-brand-muted leading-relaxed font-light">
+              Our team is constantly educated on advanced beauty trends, contouring mathematics, and state-of-the-art hair protein therapies.
+            </p>
+          </div>
+
+          <!-- Box 3 -->
+          <div class="bg-white p-8 rounded-2xl border border-brand-border shadow-sm space-y-4 hover:border-brand-accent-pink/30 hover:shadow-md transition duration-300">
+            <div class="w-12 h-12 rounded-full bg-brand-bg-primary border border-brand-border flex items-center justify-center">
+              <i data-lucide="shield-check" class="w-6 h-6 text-emerald-500"></i>
+            </div>
+            <h3 class="font-serif text-lg font-semibold text-brand-text">Hospital Grade Hygiene</h3>
+            <p class="text-xs text-brand-muted leading-relaxed font-light">
+              Complete tools sterilization between clients, single-use application sponges, and fresh towels are strict non-negotiables.
+            </p>
+          </div>
+
+          <!-- Box 4 -->
+          <div class="bg-white p-8 rounded-2xl border border-brand-border shadow-sm space-y-4 hover:border-brand-accent-pink/30 hover:shadow-md transition duration-300">
+            <div class="w-12 h-12 rounded-full bg-brand-bg-primary border border-brand-border flex items-center justify-center">
+              <i data-lucide="flower-2" class="w-6 h-6 text-brand-rose-gold"></i>
+            </div>
+            <h3 class="font-serif text-lg font-semibold text-brand-text">Tranquil Ladies Suite</h3>
+            <p class="text-xs text-brand-muted leading-relaxed font-light">
+              Our interiors are sound-softened, filled with relaxing therapeutic aromas, and 100% private to ensure your deep relaxation.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. TESTIMONIALS SECTION -->
+    <section id="testimonials" class="py-20 md:py-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left Column: Aggregated rating presentation -->
+          <div class="lg:col-span-5 space-y-6 text-center lg:text-left">
+            
+            <span class="text-xs uppercase tracking-widest font-bold text-brand-accent-pink block">
+              Loved By Hundreds
+            </span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-brand-text">
+              Real Reviews From Verified Clients
+            </h2>
+            <p class="text-brand-muted text-sm font-light leading-relaxed max-w-md mx-auto lg:mx-0">
+              With a stellar 4.1-star rating on Google Maps based on dozens of reviews, Ideal Look Salon is a certified favorite for women in Latifabad and across Hyderabad.
+            </p>
+
+            <!-- Aggregated Score block -->
+            <div class="bg-white border border-brand-border rounded-2xl p-6 inline-block max-w-sm mx-auto shadow-sm">
+              <div class="flex items-center justify-center lg:justify-start space-x-3">
+                <span class="font-serif text-5xl font-bold text-brand-rose-gold">4.1</span>
+                <div class="text-left">
+                  <div class="flex text-amber-400">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current opacity-40"></i>
+                  </div>
+                  <span class="text-[11px] text-brand-muted block font-medium mt-1">20+ Google Reviews</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Interactive Testimonial Slider -->
+          <div class="lg:col-span-7">
+            <div class="bg-white border border-brand-border rounded-3xl p-8 sm:p-12 shadow-md relative min-h-[300px] flex flex-col justify-between">
+              
+              <!-- Sparkles decorative logo -->
+              <div class="absolute -top-4 right-8 w-12 h-12 rounded-full bg-brand-bg-secondary flex items-center justify-center border border-brand-border">
+                <i data-lucide="sparkles" class="w-6 h-6 text-brand-accent-pink"></i>
+              </div>
+
+              <!-- Slider content dynamic render -->
+              <div class="space-y-6">
+                <!-- Stars -->
+                <div class="flex text-amber-400" id="testimonial-stars">
+                  <!-- Dynamic generation of stars -->
+                </div>
+                
+                <!-- Quote text -->
+                <p class="font-serif text-base sm:text-lg text-brand-text leading-relaxed italic font-light" id="testimonial-quote">
+                  <!-- Dynamic text -->
+                </p>
+              </div>
+
+              <!-- Author Info with Verified Badge & Slider Controls -->
+              <div class="border-t border-brand-border pt-6 mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center space-x-3">
+                  <div class="w-10 h-10 rounded-full bg-brand-bg-secondary border border-brand-border flex items-center justify-center font-bold text-brand-rose-gold">
+                    <span id="testimonial-initial">S</span>
+                  </div>
+                  <div>
+                    <div class="flex items-center space-x-1.5">
+                      <span class="text-sm font-semibold text-brand-text" id="testimonial-name">Sobia Khan</span>
+                      <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-500" title="Verified Customer"></i>
+                    </div>
+                    <span class="text-[11px] text-brand-muted block" id="testimonial-date">1 week ago</span>
+                  </div>
+                </div>
+
+                <!-- Slider Controls -->
+                <div class="flex items-center space-x-2">
+                  <button onclick="prevTestimonial()" class="w-9 h-9 rounded-full border border-brand-border flex items-center justify-center hover:bg-brand-bg-secondary hover:text-brand-accent-pink transition active:scale-95">
+                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                  </button>
+                  <button onclick="nextTestimonial()" class="w-9 h-9 rounded-full border border-brand-border flex items-center justify-center hover:bg-brand-bg-secondary hover:text-brand-accent-pink transition active:scale-95">
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. APPOINTMENT BOOKING CTA / CUSTOM BUNDLE BUILDER -->
+    <section id="booking-builder" class="py-20 md:py-32 bg-brand-bg-secondary/40 border-y border-brand-border/60">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="bg-white border border-brand-border rounded-3xl p-6 sm:p-10 lg:p-12 shadow-lg space-y-8 relative">
+          
+          <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-brand-accent-pink text-white text-[10px] uppercase tracking-widest font-bold py-1.5 px-6 rounded-full shadow-md">
+            Interactive Package Builder
+          </div>
+
+          <!-- Heading -->
+          <div class="text-center space-y-2">
+            <h2 class="font-serif text-3xl font-semibold text-brand-text">Book Your Signature Session</h2>
+            <p class="text-xs text-brand-muted max-w-lg mx-auto">
+              Select multiple treatments, pick your ideal schedule, input your details, and instantly generate a formatted WhatsApp message to finalize your booking!
+            </p>
+            <div class="h-[1.5px] w-12 bg-brand-rose-gold mx-auto mt-2"></div>
+          </div>
+
+          <!-- Step 1: Services Selector -->
+          <div class="space-y-4">
+            <div class="flex items-center space-x-2 border-b border-brand-border pb-2">
+              <span class="w-6 h-6 rounded-full bg-brand-accent-pink/10 text-brand-accent-pink flex items-center justify-center font-bold text-xs font-mono">1</span>
+              <h3 class="text-xs uppercase tracking-widest font-bold text-brand-text">Select Treatments</h3>
+            </div>
+
+            <!-- List of Booking Items checkboxes -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="booking-services-list">
+              <!-- Dynamically populated checkboxes -->
+            </div>
+          </div>
+
+          <!-- Step 2: Schedule & Name details -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+            
+            <div class="space-y-2">
+              <label class="block text-xs uppercase tracking-widest font-bold text-brand-text" for="book-date">Preferred Date</label>
+              <div class="relative">
+                <input 
+                  type="date" 
+                  id="book-date" 
+                  class="w-full bg-brand-bg-primary border border-brand-border rounded-xl py-3 px-4 text-xs font-semibold focus:outline-none focus:border-brand-accent-pink"
+                >
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label class="block text-xs uppercase tracking-widest font-bold text-brand-text" for="book-time">Preferred Time</label>
+              <div class="relative">
+                <input 
+                  type="time" 
+                  id="book-time" 
+                  value="14:00"
+                  class="w-full bg-brand-bg-primary border border-brand-border rounded-xl py-3 px-4 text-xs font-semibold focus:outline-none focus:border-brand-accent-pink"
+                >
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label class="block text-xs uppercase tracking-widest font-bold text-brand-text" for="book-name">Your Full Name</label>
+              <input 
+                type="text" 
+                id="book-name" 
+                placeholder="e.g. Ayesha Khan"
+                class="w-full bg-brand-bg-primary border border-brand-border rounded-xl py-3 px-4 text-xs font-semibold focus:outline-none focus:border-brand-accent-pink"
+              >
+            </div>
+
+          </div>
+
+          {/* Optional notes */}
+          <div class="space-y-2">
+            <label class="block text-xs uppercase tracking-widest font-bold text-brand-text" for="book-notes">Additional Instructions (Optional)</label>
+            <textarea 
+              id="book-notes" 
+              rows="2"
+              placeholder="e.g. Any skin allergies, specific hair length, or extra bridal party details..."
+              class="w-full bg-brand-bg-primary border border-brand-border rounded-xl py-3 px-4 text-xs font-semibold focus:outline-none focus:border-brand-accent-pink"
+            ></textarea>
+          </div>
+
+          <!-- Live Booking Summary & WhatsApp Launch Button -->
+          <div class="bg-brand-bg-secondary/60 border border-brand-border rounded-2xl p-6 space-y-4">
+            <div class="flex items-center justify-between border-b border-brand-border/60 pb-3">
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-text">Booking Summary</span>
+              <span class="text-[10px] bg-brand-accent-pink text-white font-bold uppercase px-2.5 py-0.5 rounded-full" id="summary-count">1 Treatment</span>
+            </div>
+
+            <!-- Dynamic listed summary items -->
+            <ul class="space-y-2" id="summary-items-list">
+              <!-- Dynamically populated summary lines -->
+            </ul>
+
+            <div class="border-t border-brand-border/60 pt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div>
+                <span class="text-[10px] text-brand-muted uppercase block font-medium">Pricing Model</span>
+                <span class="text-xs font-bold text-brand-rose-gold block">Consultation on Arrival</span>
+              </div>
+              <button 
+                onclick="submitBookingToWhatsApp()"
+                class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-brand-accent-pink text-white text-xs uppercase tracking-widest font-bold py-3.5 px-8 rounded-full shadow-md hover:bg-[#d6557e] transition duration-300 active:scale-95"
+              >
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Send Booking to WhatsApp</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CONTACT & LOCATION SECTION -->
+    <section id="contact" class="py-20 md:py-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          
+          <!-- Left Column: Business info & quick forms -->
+          <div class="lg:col-span-6 space-y-8">
+            
+            <div class="space-y-3">
+              <span class="text-xs uppercase tracking-widest font-bold text-brand-rose-gold block">Get In Touch</span>
+              <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-brand-text">Visit Our Sanctuary</h2>
+              <p class="text-brand-muted text-sm font-light">
+                Whether you wish to reserve a bridal consultation slot, or have questions about a complex hair treatment, we are here for you.
+              </p>
+              <div class="h-[2px] w-20 bg-brand-accent-pink"></div>
+            </div>
+
+            {/* Contact details list */}
+            <div class="space-y-6">
+              
+              <div class="flex items-start space-x-4">
+                <div class="w-10 h-10 rounded-full bg-brand-bg-secondary border border-brand-border flex items-center justify-center flex-shrink-0 text-brand-accent-pink">
+                  <i data-lucide="map-pin" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-xs uppercase tracking-widest font-bold text-brand-text block">Location Address</span>
+                  <p class="text-sm text-brand-muted font-light mt-0.5">
+                    Unit 7 House, Latifabad Unit 7, Hyderabad, 71000, Pakistan
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div class="w-10 h-10 rounded-full bg-brand-bg-secondary border border-brand-border flex items-center justify-center flex-shrink-0 text-brand-rose-gold">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-xs uppercase tracking-widest font-bold text-brand-text block">Phone & WhatsApp</span>
+                  <a href="tel:+923146867612" class="text-sm font-semibold text-brand-accent-pink hover:underline block mt-0.5">
+                    +92 314 6867612
+                  </a>
+                  <a href="https://wa.me/923146867612" target="_blank" rel="referrer noopener" class="text-[11px] text-brand-muted hover:text-brand-accent-pink flex items-center space-x-1 font-medium mt-1">
+                    <i data-lucide="message-circle" class="w-3.5 h-3.5 text-[#25D366]"></i>
+                    <span>Connect instantly on WhatsApp</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div class="w-10 h-10 rounded-full bg-brand-bg-secondary border border-brand-border flex items-center justify-center flex-shrink-0 text-brand-accent-pink">
+                  <i data-lucide="clock" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-xs uppercase tracking-widest font-bold text-brand-text block">Opening Hours</span>
+                  <p class="text-sm text-brand-muted font-light mt-0.5">
+                    Monday - Sunday: 11:00 AM - 09:00 PM <br>
+                    <span class="text-xs text-brand-rose-gold font-medium block mt-1">(Bridal services require pre-booking)</span>
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Instant Request Callback Card -->
+            <div class="bg-white border border-brand-border rounded-2xl p-6 shadow-sm space-y-4">
+              <h3 class="font-serif text-lg font-semibold text-brand-text flex items-center space-x-2">
+                <i data-lucide="phone" class="w-4 h-4 text-brand-accent-pink"></i>
+                <span>Request a Free Callback</span>
+              </h3>
+              <form id="callback-form" onsubmit="handleCallbackSubmit(event)" class="space-y-3">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <input 
+                    type="text" 
+                    id="callback-name"
+                    required
+                    placeholder="Your Name" 
+                    class="bg-brand-bg-primary border border-brand-border rounded-xl py-3 px-4 text-xs font-semibold focus:outline-none focus:border-brand-accent-pink w-full"
+                  >
+                  <input 
+                    type="tel" 
+                    id="callback-phone"
+                    required
+                    placeholder="WhatsApp Number (e.g. 0314...)" 
+                    class="bg-brand-bg-primary border border-brand-border rounded-xl py-3 px-4 text-xs font-semibold focus:outline-none focus:border-brand-accent-pink w-full"
+                  >
+                </div>
+                <button 
+                  type="submit" 
+                  class="w-full bg-brand-rose-gold text-white text-[11px] uppercase tracking-widest font-bold py-3 px-6 rounded-xl hover:bg-[#b08053] transition"
+                >
+                  Schedule Callback
+                </button>
+              </form>
+              <div id="callback-success" class="hidden bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs py-2 px-4 rounded-xl font-medium text-center">
+                Success! Our front desk manager will contact you on WhatsApp shortly.
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Map Frame with Custom Styling -->
+          <div class="lg:col-span-6 relative flex items-center justify-center">
+            <div class="bg-white border border-brand-border rounded-3xl p-4 w-full shadow-md overflow-hidden relative">
+              
+              <!-- Real Google Map Iframe representing Latifabad Unit 7 address -->
+              <div class="w-full h-[380px] rounded-2xl overflow-hidden bg-brand-bg-secondary flex items-center justify-center relative">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.2818987483756!2d68.34185207593683!3d25.395359723846663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1m2!1s0x394c70be6a32d6db%3A0xe54d6fa7c6eb2d69!2sLatifabad%20Unit%207%2C%20Hyderabad%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1719363503234!5m2!1sen!2s" 
+                  width="100%" 
+                  height="100%" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Ideal Look Salon Map Location"
+                ></iframe>
+              </div>
+
+              <!-- Map Overlay tag -->
+              <div class="absolute bottom-8 left-8 right-8 bg-brand-bg-primary/95 backdrop-blur-sm border border-brand-border rounded-2xl p-4 flex items-center justify-between shadow-lg">
+                <div>
+                  <span class="text-[10px] uppercase tracking-widest font-bold text-brand-accent-pink block">Location Details</span>
+                  <span class="text-xs font-bold text-brand-text block mt-0.5">Latifabad Unit 7, Hyderabad</span>
+                  <span class="text-[11px] text-brand-muted block">Directly behind main market</span>
+                </div>
+                <a 
+                  href="https://maps.google.com/?q=Latifabad+Unit+7+Hyderabad+Pakistan" 
+                  target="_blank" 
+                  rel="referrer noopener"
+                  class="bg-brand-rose-gold text-white p-2.5 rounded-full hover:bg-[#b08053] transition"
+                  title="Open in Google Maps"
+                >
+                  <i data-lucide="compass" class="w-4 h-4"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 9. FOOTER SECTION -->
+    <footer class="bg-brand-bg-secondary/40 border-t border-brand-border/60 py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-brand-border/60 pb-12 mb-12">
+          
+          <!-- Column 1: Monogram & Bio -->
+          <div class="space-y-4">
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-full border border-brand-rose-gold bg-white flex items-center justify-center shadow-sm">
+                <span class="font-serif text-base font-semibold text-brand-rose-gold tracking-widest">IL</span>
+              </div>
+              <div>
+                <span class="font-serif text-lg font-semibold tracking-wide text-brand-text block">
+                  Ideal Look
+                </span>
+                <span class="text-[8px] tracking-[0.2em] uppercase text-brand-accent-pink block font-bold">
+                  Salon & Bridal Studio
+                </span>
+              </div>
+            </div>
+            <p class="text-xs text-brand-muted leading-relaxed font-light">
+              Premium feminine pampering, luxury bridal makeup artistry, and state-of-the-art hair restoration suite in Latifabad Unit 7, Hyderabad.
+            </p>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="space-y-4">
+            <h4 class="font-serif text-sm font-bold text-brand-text uppercase tracking-widest">Explore</h4>
+            <ul class="space-y-2.5 text-xs text-brand-muted">
+              <li><a href="#about" class="hover:text-brand-accent-pink transition font-medium">Our Story & Staff</a></li>
+              <li><a href="#services" class="hover:text-brand-accent-pink transition font-medium">Services & Price Menu</a></li>
+              <li><a href="#bridal" class="hover:text-brand-accent-pink transition font-medium">Signature Bridal Lounge</a></li>
+              <li><a href="#why-us" class="hover:text-brand-accent-pink transition font-medium">Sanitization Standards</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Contact & Legal -->
+          <div class="space-y-4">
+            <h4 class="font-serif text-sm font-bold text-brand-text uppercase tracking-widest">Connect</h4>
+            <ul class="space-y-2.5 text-xs text-brand-muted">
+              <li><span class="font-medium">Call:</span> +92 314 6867612</li>
+              <li><span class="font-medium">WhatsApp:</span> +92 314 6867612</li>
+              <li><span class="font-medium">Email:</span> hello@ideallooksalon.com</li>
+              <li><span class="font-medium">Visit:</span> Unit 7 House, Latifabad Unit 7</li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Social Integrity & Rating -->
+          <div class="space-y-4">
+            <h4 class="font-serif text-sm font-bold text-brand-text uppercase tracking-widest">Social & Rating</h4>
+            <div class="flex space-x-3">
+              <a href="https://instagram.com" target="_blank" rel="referrer noopener" class="w-9 h-9 bg-white border border-brand-border rounded-full flex items-center justify-center hover:bg-brand-bg-secondary hover:text-brand-accent-pink transition">
+                <i data-lucide="instagram" class="w-4 h-4"></i>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="referrer noopener" class="w-9 h-9 bg-white border border-brand-border rounded-full flex items-center justify-center hover:bg-brand-bg-secondary hover:text-brand-accent-pink transition">
+                <i data-lucide="facebook" class="w-4 h-4"></i>
+              </a>
+              <a href="https://wa.me/923146867612" target="_blank" rel="referrer noopener" class="w-9 h-9 bg-white border border-brand-border rounded-full flex items-center justify-center hover:bg-brand-bg-secondary hover:text-brand-accent-pink transition">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+              </a>
+            </div>
+            <div class="pt-2">
+              <div class="flex items-center space-x-1.5 text-amber-400">
+                <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                <span class="text-xs text-brand-text font-bold">4.1 Stars</span>
+                <span class="text-[10px] text-brand-muted">(20+ Reviews)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-brand-muted">
+          <p>© 2026 Ideal Look Salon. All rights reserved. Unit 7 House, Latifabad Unit 7, Hyderabad, Pakistan.</p>
+          <p class="font-mono text-[10px]">Pure Luxury Artistry</p>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
   </body>
 </html>
-
